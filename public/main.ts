@@ -67,24 +67,19 @@ async function getDataFromAPI() {
   try {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
 
-    if (response.ok) {
+    if (response) {
       const data = await response.json();
       return data;
-    } else {
-      throw new Error('API javobi xato');
-    }
-  } catch (error) {
+    } 
+    else throw new Error('API javobi xato');
+  
+  } 
+  catch (error) {
     console.error('API dan ma\'lumot olishda xatolik yuz berdi:', error);
-    return null;
-  }
+  };
 }
 
 getDataFromAPI()
   .then((data) => {
-    if (data) {
-      console.log('API dan olingan ma\'lumotlar:', data);
       renderFunction(data);
-    } else {
-      console.log('API dan ma\'lumot olishda xato yuz berdi');
-    }
   });
