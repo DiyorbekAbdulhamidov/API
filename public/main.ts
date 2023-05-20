@@ -13,7 +13,7 @@ async function renderFunction(data: any) {
   let actionTh = document.createElement('th');
 
   idTh.classList.add('id');
-  actionTh.classList.add('actioins')
+  actionTh.classList.add('actions');
 
   idTh.textContent = 'ID';
   nameTh.textContent = 'NAME';
@@ -45,6 +45,13 @@ async function renderFunction(data: any) {
     spanSymptoms.textContent = 'symptoms';
 
     tdId.textContent = data[i].id.toString();
+    if (parseInt(tdId.innerText) % 2 === 0) {
+      tdId.style.backgroundColor = 'rgb(225, 225, 225)';
+      tdName.style.backgroundColor = 'rgb(225, 225, 225)';
+      tdEmail.style.backgroundColor = 'rgb(225, 225, 225)';
+      tdAction.style.backgroundColor = 'rgb(225, 225, 225)';
+      tdAddress.style.backgroundColor = 'rgb(225, 225, 225)';
+    }
     tdName.textContent = data[i].name;
     tdEmail.textContent = data[i].email;
     tdAddress.textContent = data[i].address.street + ', ' + data[i].address.city;
@@ -70,10 +77,9 @@ async function getDataFromAPI() {
     if (response) {
       const data = await response.json();
       return data;
-    } 
-    else throw new Error('API javobi xato');
-  
-  } 
+    }
+
+  }
   catch (error) {
     console.error('API dan ma\'lumot olishda xatolik yuz berdi:', error);
   };
@@ -81,5 +87,5 @@ async function getDataFromAPI() {
 
 getDataFromAPI()
   .then((data) => {
-      renderFunction(data);
+    renderFunction(data);
   });

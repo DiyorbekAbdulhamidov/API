@@ -21,7 +21,7 @@ function renderFunction(data) {
         let addressTh = document.createElement('th');
         let actionTh = document.createElement('th');
         idTh.classList.add('id');
-        actionTh.classList.add('actioins');
+        actionTh.classList.add('actions');
         idTh.textContent = 'ID';
         nameTh.textContent = 'NAME';
         emailTh.textContent = 'EMAIL';
@@ -47,6 +47,13 @@ function renderFunction(data) {
             spanDelete.textContent = 'delete';
             spanSymptoms.textContent = 'symptoms';
             tdId.textContent = data[i].id.toString();
+            if (parseInt(tdId.innerText) % 2 === 0) {
+                tdId.style.backgroundColor = 'rgb(225, 225, 225)';
+                tdName.style.backgroundColor = 'rgb(225, 225, 225)';
+                tdEmail.style.backgroundColor = 'rgb(225, 225, 225)';
+                tdAction.style.backgroundColor = 'rgb(225, 225, 225)';
+                tdAddress.style.backgroundColor = 'rgb(225, 225, 225)';
+            }
             tdName.textContent = data[i].name;
             tdEmail.textContent = data[i].email;
             tdAddress.textContent = data[i].address.street + ', ' + data[i].address.city;
@@ -70,8 +77,6 @@ function getDataFromAPI() {
                 const data = yield response.json();
                 return data;
             }
-            else
-                throw new Error('API javobi xato');
         }
         catch (error) {
             console.error('API dan ma\'lumot olishda xatolik yuz berdi:', error);
