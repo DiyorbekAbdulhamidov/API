@@ -1,6 +1,6 @@
 const section = document.querySelector('section');
 
-async function renderFunction(data:any) {
+async function renderFunction(data: any) {
   let table = document.createElement('table');
   table.style.border = '1px solid black';
   table.style.borderCollapse = 'collapse';
@@ -11,6 +11,9 @@ async function renderFunction(data:any) {
   let emailTh = document.createElement('th');
   let addressTh = document.createElement('th');
   let actionTh = document.createElement('th');
+
+  idTh.classList.add('id');
+  actionTh.classList.add('actioins')
 
   idTh.textContent = 'ID';
   nameTh.textContent = 'NAME';
@@ -36,7 +39,6 @@ async function renderFunction(data:any) {
     let spanDelete = document.createElement('span');
     let spanSymptoms = document.createElement('span');
 
-    tdId.classList.add('id')
     spanDelete.className = 'material-symbols-outlined delete';
     spanSymptoms.className = 'material-symbols-outlined eye';
     spanDelete.textContent = 'delete';
@@ -45,7 +47,7 @@ async function renderFunction(data:any) {
     tdId.textContent = data[i].id.toString();
     tdName.textContent = data[i].name;
     tdEmail.textContent = data[i].email;
-    tdAddress.textContent = data[i].address.street + ', ' + data[i].address.city;   
+    tdAddress.textContent = data[i].address.street + ', ' + data[i].address.city;
 
     tr.appendChild(tdId);
     tr.appendChild(tdName);

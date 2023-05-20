@@ -20,6 +20,8 @@ function renderFunction(data) {
         let emailTh = document.createElement('th');
         let addressTh = document.createElement('th');
         let actionTh = document.createElement('th');
+        idTh.classList.add('id');
+        actionTh.classList.add('actioins');
         idTh.textContent = 'ID';
         nameTh.textContent = 'NAME';
         emailTh.textContent = 'EMAIL';
@@ -40,7 +42,6 @@ function renderFunction(data) {
             let tdAction = document.createElement('td');
             let spanDelete = document.createElement('span');
             let spanSymptoms = document.createElement('span');
-            tdId.classList.add('id');
             spanDelete.className = 'material-symbols-outlined delete';
             spanSymptoms.className = 'material-symbols-outlined eye';
             spanDelete.textContent = 'delete';
