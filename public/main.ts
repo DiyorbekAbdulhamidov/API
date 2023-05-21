@@ -80,9 +80,7 @@ async function getDataFromAPI() {
     }
 
   }
-  catch (error) {
-    console.error('API dan ma\'lumot olishda xatolik yuz berdi:', error);
-  };
+  finally{};
 }
 
 getDataFromAPI()
