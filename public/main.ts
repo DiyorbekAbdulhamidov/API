@@ -1,6 +1,6 @@
 const section = document.querySelector('section');
 
-async function renderFunction(data: any) {
+function renderFunction(data: any) {
   let table = document.createElement('table');
   table.style.border = '1px solid black';
   table.style.borderCollapse = 'collapse';
@@ -80,7 +80,9 @@ async function getDataFromAPI() {
     }
 
   }
-  finally{};
+  catch(err){
+    alert('Error❌')
+  }
 }
 
 getDataFromAPI()
