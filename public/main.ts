@@ -11,6 +11,7 @@ const infoWebsite = document.querySelector('.infoWebsite') as HTMLSpanElement;
 const infoCompany = document.querySelector('.infoCompany') as HTMLSpanElement;
 const animations = document.querySelector(".lds-facebook") as HTMLDivElement
 let table: HTMLTableElement;
+
 function renderFunction(data: any) {
   table = document.createElement('table');
   table.style.border = '1px solid black';
