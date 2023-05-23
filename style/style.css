@@ -101,7 +101,7 @@ span{
 }
 
 .lds-facebook {
-    display: inline-block;
+    display: none;
     position: relative;
     width: 80px;
     height: 80px;
